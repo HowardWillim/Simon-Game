@@ -40,9 +40,23 @@ function checkAnswer(currentLevel){
             },1000);
         }
     }
+    else{
+        playSound("wrong");
+        $("h1").text("Game Over, Press Any Key to Restart");
+        $("body").addClass("game-over");
+        setTimeout(() => {
+            $("body").removeClass("game-over");
+        }, 200);
+        startOver();
+    }
 
 }
 
+function startOver(){
+    level=0;
+    gamePattern=[];
+    started=false;
+}
 
     
 $(document).keypress(function() {
